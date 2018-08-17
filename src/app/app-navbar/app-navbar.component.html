@@ -1,0 +1,117 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li> -->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#SignUp">Sign Up</button>
+      <pre style="color: white"><br> or </pre>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#SignIn">Sign In</button>
+    </form>
+  </div>
+</nav>
+
+<!-- Sign Up -->
+<div class="modal" id="SignUp">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Sign Up</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="modal-body">
+          <div class="container">
+            <form #userSignUp="ngForm" (ngSubmit)="SignUp()">
+              <div class="form-group">
+                <label for="fn">First Name:</label>
+                <input type="text" class="form-control" id="fn" ngModel>
+              </div>
+              <div class="form-group">
+                <label for="ln">Last Name:</label>
+                <input type="text" class="form-control" id="ln" ngModel>
+              </div>
+              <div class="form-group">
+                <label for="pn">Phone Number:</label>
+                <input type="number" class="form-control" id="pn" ngModel>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" ngModel>
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" ngModel>
+              </div>
+              <button type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Modal footer -->
+
+      <!-- <button type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+
+
+    </div>
+  </div>
+</div>
+
+<!-- Sign In -->
+<div class="modal" id="SignIn">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Sign In</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="modal-body">
+          <div class="container">
+            <form #userSignIn="ngForm" (ngSubmit)="SignIn()">
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" ngModel>
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" ngModel>
+              </div>
+              <button type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+        
+    </div>
+  </div>
+</div>
