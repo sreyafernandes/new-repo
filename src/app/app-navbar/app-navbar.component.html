@@ -12,9 +12,6 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="info">Info</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="profile">Profile</a>
       </li>
       <!-- <li class="nav-item dropdown">
@@ -49,28 +46,28 @@
       <div class="modal-body">
         <div class="modal-body">
           <div class="container">
-            <form>
+            <form [formGroup]="userSignUp" (ngSubmit)="SignUp()">
               <div class="form-group">
                 <label for="fn">First Name:</label>
-                <input type="text" class="form-control" name="fn" id="fn" [(ngModel)]="fn">
+                <input type="text" class="form-control" name="fn" formControlName="fn">
               </div>
               <div class="form-group">
                 <label for="ln">Last Name:</label>
-                <input type="text" class="form-control" id="ln" name="ln" [(ngModel)]="ln">
+                <input type="text" class="form-control" name="ln" formControlName="ln">
               </div>
               <div class="form-group">
                 <label for="pn">Phone Number:</label>
-                <input type="number" class="form-control" id="pn" name="pn" [(ngModel)]="pn">
+                <input type="number" class="form-control" name="pn" formControlName="pn">
               </div>
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+                <input type="email" class="form-control" name="email" formControlName="email">
               </div>
               <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" name="pwd" [(ngModel)]="pwd">
+                <input type="password" class="form-control" name="pwd" formControlName="pwd">
               </div>
-              <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="SignUp()">Submit</button>
+              <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="SignUp()" [disabled]="!userSignUp.valid">Submit</button>
             </form>
           </div>
         </div>
@@ -106,8 +103,8 @@
                 <input type="email" class="form-control" name="em" formControlName="em">
               </div>
               <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" formControlName="passwd">
+                <label for="passwd">Password:</label>
+                <input type="password" class="form-control" name="passwd" formControlName="passwd">
               </div>
               <button type="submit" class="btn btn-primary" (click)="SignIn()" data-dismiss="modal" [routerLink]="['/profile']" [disabled]="!userSignIn.valid">Submit</button>
             </form>

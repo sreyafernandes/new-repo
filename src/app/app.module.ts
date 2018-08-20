@@ -13,14 +13,13 @@ import { environment } from '../environments/environment';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { InfoComponent } from './info/info.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { ProfileServiceService } from './profile-service.service';
 
 const routes: Routes = [
-  { path: 'info', component: InfoComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent }
@@ -30,7 +29,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     AppNavbarComponent,
-    InfoComponent,
     ProfileComponent,
     HomeComponent,
   ],
@@ -44,7 +42,7 @@ const routes: Routes = [
     NgbModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [ProfileServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
