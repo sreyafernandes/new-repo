@@ -9,6 +9,7 @@ import { ProfileServiceService } from '../profile-service.service';
   styleUrls: ['./app-navbar.component.css'],
 })
 export class AppNavbarComponent implements OnInit {
+  Books: any[];
   constructor(private router: Router, private profileService: ProfileServiceService) { }
   userSignUp = new FormGroup({
     fn: new FormControl(''),
@@ -21,7 +22,7 @@ export class AppNavbarComponent implements OnInit {
     em: new FormControl(''),
     passwd: new FormControl('')
   });
-  ngOnInit() {}
+  ngOnInit() { }
   SignIn() {
     alert('Welcome, ' + this.userSignIn.value.em);
     // console.warn(this.userSignIn.value);
@@ -30,11 +31,12 @@ export class AppNavbarComponent implements OnInit {
   }
 
   SignUp() {
-    this.profileService.storeUser({f_name: this.userSignUp.value.fn ,l_name: this.userSignUp.value.ln , p_name: this.userSignUp.value.pn , email: this.userSignUp.value.email , pwd: this.userSignUp.value.pwd});
+    this.profileService.storeUser(this.userSignUp.value);
     alert('Welcome, ' + this.userSignUp.value.fn);
     // console.warn(this.userSignIn.value);
     // alert('username: ' + this.userSignIn.value.em);
     console.log(this.userSignUp.value);
     this.router.navigate(['/profile']);
   }
+
 }

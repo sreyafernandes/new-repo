@@ -9,12 +9,12 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class AppComponent {
   title = 'DigiProfile';
-  Books: any[];
-  constructor(db: AngularFireDatabase) {
-    db.list('/Books')
-    .valueChanges().subscribe(Books => {
-      this.Books = Books;
-      console.log(this.Books);
-    });
-  }
+  // Books: any[];
+  // constructor(db: AngularFireDatabase) {
+  //   db.list('/Books')
+  //   .valueChanges().subscribe(Books => {
+  //     this.Books = Books;
+  //     console.log(this.Books);
+  //   });
+  // }
 }

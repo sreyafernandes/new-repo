@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-      apiKey: 'AIzaSyApKk2lhpyAmQlR-m7Ueaq5n01nsHN1OHA',
-      authDomain: 'grocerylist-f4e8b.firebaseapp.com',
-      databaseURL: 'https://grocerylist-f4e8b.firebaseio.com',
-      projectId: 'grocerylist-f4e8b',
-      storageBucket: 'grocerylist-f4e8b.appspot.com',
-      messagingSenderId: '668614893772',
+    apiKey: 'AIzaSyBP0NlgA34GJxzwgDSsAoSdXL1umyEazq8',
+    authDomain: 'difiprofilebback-end.firebaseapp.com',
+    databaseURL: 'https://difiprofilebback-end.firebaseio.com',
+    projectId: 'difiprofilebback-end',
+    storageBucket: 'difiprofilebback-end.appspot.com',
+    messagingSenderId: '80545429025'
   }
 };
 
